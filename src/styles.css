@@ -107,7 +107,7 @@
   .music-top { display: flex; align-items: center; gap: 7px; color: var(--muted-foreground); font-size: 10px; }
   .music-top svg { color: var(--primary); }
   .music-content { display: grid; grid-template-columns: 64px minmax(0,1fr) auto; align-items: center; gap: 15px; margin-top: 21px; }
-  .album-cover { width: 64px; height: 64px; display: grid; place-content: center; background: var(--peach); color: var(--primary-foreground); font-family: var(--font-display); font-size: 15px; line-height: 1.05; font-weight: 700; transform: rotate(-3deg); }
+  .album-cover { width: 64px; height: 64px; display: grid; place-content: center; background: var(--peach); color: var(--primary-foreground); font-family: var(--font-display); font-size: 11px; line-height: 1.1; font-weight: 700; transform: rotate(-3deg); }
   .song-title { font-size: 14px; font-weight: 500; }
   .artist-name { font-size: 11px; color: var(--muted-foreground); margin-top: 5px; }
   .music-bars { display: flex; align-items: end; gap: 3px; height: 22px; color: var(--primary); }
