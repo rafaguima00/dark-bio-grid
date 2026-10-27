@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { ArrowUpRight, ArrowRight, Share2, MapPin, Instagram, Mail, Copy, Check, FileText, Link2, Heart, Music2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import portrait from '@/assets/lucas-portrait.jpg';
+import portrait from '@/assets/rafael-portrait.jpg';
 import project from '@/assets/forma-project.jpg';
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
-    { title: 'Lucas Martins — Design, ideias e conexões | elo' },
-    { name: 'description', content: 'O pequeno universo de Lucas Martins. Design independente, projetos selecionados, referências e boas conversas.' },
-    { property: 'og:title', content: 'Lucas Martins — Meu pequeno universo' },
+    { title: 'Rafael Moreira — Design, ideias e conexões | elo' },
+    { name: 'description', content: 'O pequeno universo de Rafael Moreira. Design independente, projetos selecionados, referências e boas conversas.' },
+    { property: 'og:title', content: 'Rafael Moreira — Meu pequeno universo' },
     { property: 'og:description', content: 'Design, projetos, ideias e conexões em um só lugar.' },
     { property: 'og:type', content: 'website' },
     { name: 'twitter:card', content: 'summary_large_image' },
@@ -37,8 +37,8 @@ function Index() {
         <div className="section-label"><span /> MEU PEQUENO UNIVERSO</div>
         <div className="bento-grid">
           <section className="tile profile-tile">
-            <div className="profile-top"><img src={portrait} alt="Retrato de Lucas Martins" className="portrait" width={72} height={72} /><span className="availability"><span className="status-dot" />Disponível para projetos</span></div>
-            <h1>Oi, eu sou o Lucas<span> ✳</span></h1>
+            <div className="profile-top"><img src={portrait} alt="Retrato de Rafael Moreira" className="portrait" width={72} height={72} /><span className="availability"><span className="status-dot" />Disponível para projetos</span></div>
+            <h1>Oi, eu sou o Rafael<span> ✳</span></h1>
             <p className="profile-description"><strong>Designer independente & curioso por natureza.</strong> Transformo ideias em experiências digitais com propósito e personalidade.</p>
             <div className="profile-bottom"><span className="location-line"><MapPin size={13} />São Paulo, Brasil</span><Button variant="ghost" className="about-button" onClick={() => open('about')}>Mais sobre mim <ArrowUpRight size={13} /></Button></div>
           </section>
@@ -58,8 +58,8 @@ function Index() {
       <footer className="page-footer"><span className="footer-message">Feito com intenção. E um pouco de <Heart size={10} />.</span><span>Conectado por <span className="footer-mark">elo<span className="wordmark-dot">.</span></span></span></footer>
       <Dialog open={modal !== null} onOpenChange={value => { if (!value) setModal(null); }}>
         <DialogContent className="max-w-lg w-[calc(100%-32px)] rounded-lg bg-card">
-          <DialogHeader><DialogTitle className="font-display text-2xl">{modal === 'about' ? 'Prazer, Lucas.' : modal === 'project' ? 'Forma® Studio' : modal === 'contact' ? 'Vamos criar algo juntos?' : modal === 'notes' ? 'Notas soltas' : 'Conexões merecem ser compartilhadas.'}</DialogTitle><DialogDescription>{modal === 'about' ? 'Design independente, curiosidade sem limites.' : modal === 'project' ? 'Identidade visual · Direção de arte · 2026' : modal === 'contact' ? 'Toda boa parceria começa com um oi.' : modal === 'notes' ? 'Um espaço para pensar além da tela.' : 'Leve este pequeno universo para alguém.'}</DialogDescription></DialogHeader>
-          {modal === 'about' && <><img src={portrait} alt="Lucas Martins" width={96} height={96} className="h-24 w-24 rounded-full object-cover my-2" /><p className="dialog-copy">Sou um designer independente baseado em São Paulo. Gosto de conectar estratégia e sensibilidade para criar identidades e experiências digitais que fazem sentido.</p><p className="dialog-copy">Fora do trabalho, você me encontra descobrindo um álbum, fotografando a cidade ou anotando a próxima ideia.</p><p className="text-xs text-muted-foreground">Perfil fictício de demonstração. Fotografia gerada por IA.</p><Button onClick={() => open('contact')}>Vamos conversar <ArrowRight /></Button></>}
+          <DialogHeader><DialogTitle className="font-display text-2xl">{modal === 'about' ? 'Prazer, Rafael.' : modal === 'project' ? 'Forma® Studio' : modal === 'contact' ? 'Vamos criar algo juntos?' : modal === 'notes' ? 'Notas soltas' : 'Conexões merecem ser compartilhadas.'}</DialogTitle><DialogDescription>{modal === 'about' ? 'Design independente, curiosidade sem limites.' : modal === 'project' ? 'Identidade visual · Direção de arte · 2026' : modal === 'contact' ? 'Toda boa parceria começa com um oi.' : modal === 'notes' ? 'Um espaço para pensar além da tela.' : 'Leve este pequeno universo para alguém.'}</DialogDescription></DialogHeader>
+          {modal === 'about' && <><img src={portrait} alt="Rafael Moreira" width={96} height={96} className="h-24 w-24 rounded-full object-cover my-2" /><p className="dialog-copy">Sou um designer independente baseado em São Paulo. Gosto de conectar estratégia e sensibilidade para criar identidades e experiências digitais que fazem sentido.</p><p className="dialog-copy">Fora do trabalho, você me encontra descobrindo um álbum, fotografando a cidade ou anotando a próxima ideia.</p><p className="text-xs text-muted-foreground">Perfil fictício de demonstração. Fotografia gerada por IA.</p><Button onClick={() => open('contact')}>Vamos conversar <ArrowRight /></Button></>}
           {modal === 'project' && <><img src={project} className="dialog-image" alt="Objeto cromado do projeto Forma" width={1280} height={896} /><p className="dialog-copy">Uma identidade que explora o encontro entre a precisão das formas e a liberdade do movimento. Metal, cor e tipografia dão vida a um estúdio que está sempre se transformando.</p><div className="flex flex-wrap gap-2 text-xs text-muted-foreground"><span>Branding</span><span>·</span><span>3D & experimentação</span><span>·</span><span>Projeto conceitual</span></div><Button onClick={() => open('contact')}>Vamos criar o seu próximo projeto <ArrowUpRight /></Button></>}
           {modal === 'contact' && <><p className="dialog-copy">Conte um pouco sobre sua ideia, os desafios e o que você quer colocar no mundo.</p><div className="email-row"><span className="min-w-0 truncate">ola@exemplo.com</span><Button variant="ghost" size="icon" aria-label="Copiar e-mail" onClick={() => copy('ola@exemplo.com')}>{copied ? <Check /> : <Copy />}</Button></div><p className="text-xs text-muted-foreground">E-mail ilustrativo. Substitua pelo seu contato antes de compartilhar.</p><Button asChild><a href="mailto:ola@exemplo.com?subject=Vamos%20criar%20algo%20juntos">Escrever um e-mail <ArrowUpRight /></a></Button>{copied && <p role="status" className="text-sm text-primary">E-mail copiado!</p>}</>}
           {modal === 'notes' && <><article className="article-entry"><span className="text-xs text-muted-foreground">12 OUT 2026 · 2 MIN DE LEITURA</span><h3>Nem toda ideia precisa virar projeto.</h3><p className="dialog-copy">Algumas ideias só precisam de espaço. Um caderno, uma conversa, um passeio sem destino. Dar tempo para uma ideia respirar também faz parte do processo criativo.</p></article><article className="article-entry"><span className="text-xs text-muted-foreground">05 OUT 2026 · 1 MIN DE LEITURA</span><h3>Menos ruído, mais intenção.</h3><p className="dialog-copy">Antes de adicionar mais um elemento, pergunte: o que ele muda? O design que me interessa não é o que grita mais alto, mas o que encontra a forma certa de dizer.</p></article></>}
